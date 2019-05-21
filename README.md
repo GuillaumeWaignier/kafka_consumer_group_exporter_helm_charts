@@ -17,15 +17,14 @@ Configure the value.yml
 | service.enabled  |  true | enable the k8s service  |
 | service.port  | 80  |  port of the k8s service |
 | prometheus.enabled  | true  | add default annotations to be scraped by prometheus |
-| configuration.*  |   |  Kafka Admin client configuration
-# See https://kafka.apache.org/documentation/#adminclientconfigs |
+| configuration.*  |   |  Kafka Admin client configuration # See https://kafka.apache.org/documentation/#adminclientconfigs |
 | configuration.bootstrap.servers  |  my-confluent-oss-cp-kafka:9092 |  kafka bootstrap servers |
 
 
 Then start with
 
 ```bash
-helm repo add ianitrix https://github.com/GuillaumeWaignier/kafka_consumer_group_exporter_helm_charts/kafka-consumer-group-exporter/
+helm repo add ianitrix https://github.com/GuillaumeWaignier/kafka_consumer_group_exporter_helm_charts/
 helm repo update
 helm install ianitrix/kafka-consumer-group-exporter --name exporter
 ```
@@ -49,7 +48,7 @@ bootstrap.servers: my-confluent-oss-cp-kafka:9092
 3. Deploy the kafka_consumer_group_exporter
 
 ```bash
-helm repo add ianitrix https://github.com/GuillaumeWaignier/kafka_consumer_group_exporter_helm_charts/kafka-consumer-group-exporter/
+helm repo add ianitrix https://github.com/GuillaumeWaignier/kafka_consumer_group_exporter_helm_charts/
 helm repo update
 helm install ianitrix/kafka-consumer-group-exporter --name exporter
 ```
