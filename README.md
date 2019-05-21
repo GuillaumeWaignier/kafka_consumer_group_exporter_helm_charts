@@ -24,7 +24,7 @@ Configure the value.yml
 Then start with
 
 ```bash
-helm repo add ianitrix https://github.com/GuillaumeWaignier/kafka_consumer_group_exporter_helm_charts/
+helm repo add ianitrix https://guillaumewaignier.github.io/kafka_consumer_group_exporter_helm_charts/
 helm repo update
 helm install ianitrix/kafka-consumer-group-exporter --name exporter
 ```
@@ -48,7 +48,7 @@ bootstrap.servers: my-confluent-oss-cp-kafka:9092
 3. Deploy the kafka_consumer_group_exporter
 
 ```bash
-helm repo add ianitrix https://github.com/GuillaumeWaignier/kafka_consumer_group_exporter_helm_charts/
+helm repo add ianitrix https://guillaumewaignier.github.io/kafka_consumer_group_exporter_helm_charts/
 helm repo update
 helm install ianitrix/kafka-consumer-group-exporter --name exporter
 ```
