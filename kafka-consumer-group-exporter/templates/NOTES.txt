@@ -1,0 +1,11 @@
+1. Get the prometheus endpoint URL by running these commands:
+{{- if .Values.service.enabled }}
+  export POD_NAME=$(kubectl get pods --namespace {{ .Release.Namespace }} -l "app.kubernetes.io/name={{ include "kafka-consumer-group-exporter.name" . }},app.kubernetes.io/instance={{ .Release.Name }}" -o jsonpath="{.items[0].metadata.name}")
+  echo "Visit http://127.0.0.1:8080 to use your application"
+  kubectl port-forward $POD_NAME 8080:80
+{{- else }}
+  There is no exposed service. You can only access to the prometheus endpoint inside the pod:
+  export POD_NAME=$(kubectl get pods --namespace {{ .Release.Namespace }} -l "app.kubernetes.io/name={{ include "kafka-consumer-group-exporter.name" . }},app.kubernetes.io/instance={{ .Release.Name }}" -o jsonpath="{.items[0].metadata.name}")
+  kubectl exec -it $POD_NAME 8080:80 /bin/sh
+  wget http://localhost:8080
+{{- end }}
